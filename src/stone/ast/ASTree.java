@@ -1,11 +1,15 @@
 package stone.ast;
 
-public class ASTree {
-    /**
-     * todo 书中没有这个方法，先随手写一个
-     * @return String
-     */
-    public String location(){
-        return "";
+import java.util.Iterator;
+
+public abstract class ASTree implements Iterable<ASTree>{
+
+    public abstract ASTree child(int i);
+    public abstract int numChildren();
+    public abstract Iterator<ASTree> children();
+    public abstract String location();
+
+    public Iterator<ASTree> iterator(){
+        return children();
     }
 }
