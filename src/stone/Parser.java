@@ -312,11 +312,11 @@ public class Parser {
                 return null;
             }
             try{
-                final Method m = clazz.getMethod(factoryName, new Class<?>[]{argType});
+                final Method m = clazz.getMethod(factoryName, argType);
                 return new Factory() {
                     @Override
                     protected ASTree make0(Object arg) throws Exception {
-                        return (ASTree)((Method) m).invoke(null, arg);
+                        return (ASTree) m.invoke(null, arg);
                     }
                 };
             }catch (NoSuchMethodException e){
