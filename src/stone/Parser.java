@@ -369,7 +369,7 @@ public class Parser {
         return rule(null);
     }
 
-    public static Parser rule(Class<? extends ASTLeaf> clazz){
+    public static Parser rule(Class<? extends ASTree> clazz){
         return new Parser(clazz);
     }
 
