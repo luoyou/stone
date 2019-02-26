@@ -25,7 +25,7 @@ public class BasicParser {
     Parser block = rule(BlockStmnt.class)
             .sep("{")
             .option(statement0)
-            .repeat(rule().sep(";", Token.EOL))
+            .repeat(rule().sep(";", Token.EOL).option(statement0))
             .option(statement0)
             .sep("}");
 
