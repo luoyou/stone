@@ -3,8 +3,13 @@ package stone.ast;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * 树枝类，子类中包含树枝类或叶子类
+ */
 public class ASTList extends ASTree {
+
     protected List<ASTree> children;
+
     public ASTList(List<ASTree> list){
         children = list;
     }

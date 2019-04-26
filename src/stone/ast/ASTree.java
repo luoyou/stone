@@ -2,6 +2,9 @@ package stone.ast;
 
 import java.util.Iterator;
 
+/**
+ * 抽象类，作为树中所有的抽象节点类
+ */
 public abstract class ASTree implements Iterable<ASTree>{
 
     public abstract ASTree child(int i);

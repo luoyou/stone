@@ -5,6 +5,9 @@ import stone.Token;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * 叶子类，已经无子类
+ */
 public class ASTLeaf extends ASTree {
     private static ArrayList<ASTree> empty = new ArrayList<ASTree>();
 
@@ -27,7 +30,7 @@ public class ASTLeaf extends ASTree {
     }
 
     public String toString(){
-        return token.toString();
+        return token.getText();
     }
 
     public String location(){

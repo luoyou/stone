@@ -9,11 +9,11 @@ public class BasicParser {
     Operators operators = new Operators();
 
     Parser expr0 = rule();
-    Parser primary = rule(PrimaryExpr.class).or(
-            rule().sep("(").ast(expr0).sep(")"),
-            rule().number(NumberLiteral.class),
-            rule().identifier(Name.class, reserved),
-            rule().string(StringLiteral.class)
+    Parser primary = rule(PrimaryExpr.class)
+            .or(rule().sep("(").ast(expr0).sep(")"),
+                rule().number(NumberLiteral.class),
+                rule().identifier(Name.class, reserved),
+                rule().string(StringLiteral.class)
     );
 
     Parser factor = rule().or(rule(NegativeExpr.class).sep("-").ast(primary), primary);
